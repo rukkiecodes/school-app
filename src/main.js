@@ -5,8 +5,10 @@ import store from "./store";
 import "./registerServiceWorker";
 import vuetify from './plugins/vuetify';
 import VueParticles from 'vue-particles'
+import VeeValidate from 'vee-validate';
 
-Vue.use(VueParticles)
+Vue.use(VeeValidate);
+Vue.use(VueParticles);
 Vue.config.productionTip = false;
 
 new Vue({
