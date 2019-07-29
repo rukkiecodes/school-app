@@ -5,7 +5,7 @@
     </video>
     <div class="hero">
       <!--drawer goes here-->
-      <Drawer />
+      <Nav />
       <div class="texts">
         <h1>level up learning</h1>
         <h4>You are not alone</h4>
@@ -21,14 +21,14 @@
 
 <script>
 import Forms from './Forms'
-import Drawer from './Drawer'
+import Nav from './Nav'
   export default {
     name:'Home',
     data:() => ({
       drawer: false
     }),
     components:{
-      Forms, Drawer
+      Forms, Nav
     }
   }
 </script>

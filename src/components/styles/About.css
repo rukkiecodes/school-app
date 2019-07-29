@@ -1,0 +1,51 @@
+.about {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  height: 100%;
+}
+
+.about .hero {
+  background: linear-gradient(50deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(../../assets/bg3.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 90vh;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.about .hero .texts {
+  position: relative;
+  top: 90px;
+  max-width: 80%;
+  padding: 0% 10%;
+}
+
+.about .hero .texts h1 {
+  color: #fff;
+  font-weight: lighter;
+  font-size: 4em;
+  text-transform: uppercase;
+}
+
+.about .hero .texts blockquote {
+  color: #fff;
+  font-weight: 300;
+  word-spacing: 2px;
+}
+
+.about .cards {
+  width: 100%;
+  margin: 0;
+  padding: 15% 2%;
+  position: relative;
+  top: 4%;
+  background: #34393F;
+}
+
+.about .cards .mx-auto {
+  width: 25% !important;
+  height: auto !important;
+}
+/*# sourceMappingURL=About.css.map */
