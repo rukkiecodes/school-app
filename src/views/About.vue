@@ -2,9 +2,9 @@
   <div class="about">
     <div class="hero">
       <Nav />
-      <div class="texts">
-        <h1>About Us</h1>
-        <blockquote>Since our inception in 2004, Level Up Learning has been delivering quality and Outsourcing services worldwide. We combine business domain knowledge, proven methodologies, and technology expertise of 450+ skilled professionals teachers to yield high-quality solutions that add value to businesses.</blockquote>
+      <div class="texts animated bounceInUp">
+        <h1 class="scroll" data-rate="-2" data-direction="vertical">About Us</h1>
+        <blockquote class="scroll" data-rateY="1" data-rateX="2" data-direction="horizontal">Since our inception in 2004, Level Up Learning has been delivering quality and Outsourcing services worldwide. We combine business domain knowledge, proven methodologies, and technology expertise of 450+ skilled professionals teachers to yield high-quality solutions that add value to businesses.</blockquote>
       </div>
     </div>
 
@@ -79,15 +79,36 @@
         </v-layout>
       </v-container>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer"
 export default {
   name: "About",
   components: {
-    Nav
+    Nav, Footer
+  },
+  mounted(){
+    window.addEventListener('scroll', function(e){
+      const target = document.querySelectorAll('.scroll');
+
+      var index = 0, length = target.length;
+      for(index; index < length; index++){
+        var pos = window.pageYOffset * target[index].dataset.rate;
+
+        if(target[index].dataset.direction === 'vertical'){
+          target[index].style.transform = 'translate3d(0px, '+pos+'px, 0px)'
+        }else{
+          var posX = window.pageYOffset * target[index].dataset.ratex;
+          var posY = window.pageYOffset * target[index].dataset.ratey;
+
+          target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)';
+        }
+      }
+    })
   }
 };
 </script>

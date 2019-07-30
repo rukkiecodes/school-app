@@ -1,0 +1,68 @@
+.foot{
+    margin: 0%;
+    padding: 0;
+    height: 80vh;
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(50deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(../../assets//bg3.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    align-items: center;
+
+    .head{
+        margin: auto;
+        display: block;
+        text-align: center;
+        padding: 2%;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.4);
+
+        h1{
+            font-size: 3em;
+            font-weight: 300;
+        }
+    }
+
+    .container{
+        .inner{
+            background: #00b6ff;
+            padding: 1em;
+            border-radius: 10px;
+            width: 250px;
+            clip-path: circle(10% at 90% 20%);
+            transition: clip-path .5s ease-in-out;
+            cursor: pointer;
+    
+            &:hover{
+                clip-path:  circle(75%);
+                background: #00b6ff;
+            }
+    
+            span{
+                float: right;
+                color: #fff;
+                font-weight: bold;
+                transition: color .5s;
+                position: relative;
+                margin-right: 4%;
+            }
+    
+            &:hover span{
+                color: rgba(255,255,255,0);
+            }
+    
+            h1{
+                color: #fff;
+                margin: 0;
+            }
+    
+            p{
+                color: #fff;
+                font-size: .8rem;
+            }
+        }
+    }
+}

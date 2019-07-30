@@ -1,0 +1,77 @@
+.foot {
+  margin: 0%;
+  padding: 0;
+  height: 80vh;
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: linear-gradient(50deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(../../assets//bg3.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.foot .head {
+  margin: auto;
+  display: block;
+  text-align: center;
+  padding: 2%;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.foot .head h1 {
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.foot .container .inner {
+  background: #00b6ff;
+  padding: 1em;
+  border-radius: 10px;
+  width: 250px;
+  -webkit-clip-path: circle(10% at 90% 20%);
+          clip-path: circle(10% at 90% 20%);
+  -webkit-transition: -webkit-clip-path .5s ease-in-out;
+  transition: -webkit-clip-path .5s ease-in-out;
+  transition: clip-path .5s ease-in-out;
+  transition: clip-path .5s ease-in-out, -webkit-clip-path .5s ease-in-out;
+  cursor: pointer;
+}
+
+.foot .container .inner:hover {
+  -webkit-clip-path: circle(75%);
+          clip-path: circle(75%);
+  background: #00b6ff;
+}
+
+.foot .container .inner span {
+  float: right;
+  color: #fff;
+  font-weight: bold;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  position: relative;
+  margin-right: 4%;
+}
+
+.foot .container .inner:hover span {
+  color: rgba(255, 255, 255, 0);
+}
+
+.foot .container .inner h1 {
+  color: #fff;
+  margin: 0;
+}
+
+.foot .container .inner p {
+  color: #fff;
+  font-size: .8rem;
+}
+/*# sourceMappingURL=footer.css.map */
