@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   background: #fff;
-  height: 100%;
+  height: 150%;
 }
 
 .about .hero {
@@ -10,14 +10,12 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 90vh;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  height: 100vh;
 }
 
 .about .hero .texts {
   position: relative;
-  top: 90px;
+  top: 180px;
   max-width: 80%;
   padding: 0% 10%;
 }
@@ -36,16 +34,47 @@
 }
 
 .about .cards {
-  width: 100%;
-  margin: 0;
-  padding: 15% 2%;
   position: relative;
-  top: 4%;
-  background: #34393F;
+  top: 2%;
+  padding: 5% 2%;
 }
 
-.about .cards .mx-auto {
-  width: 25% !important;
-  height: auto !important;
+.about .cards .pill {
+  width: 70% !important;
+  margin: 5% auto;
+}
+
+.about .cards .pill .card-title h3 {
+  margin: auto;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.about .cards .pill .card-title p {
+  font-size: .8em;
+  margin: auto;
+  font-weight: 400;
+}
+
+.about .cards .mission {
+  width: 100%;
+  padding: 10%;
+  margin: auto;
+}
+
+.about .cards .mission .sight {
+  margin-top: 10%;
+}
+
+.about .cards .mission .sight h1 {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.about .cards .mission .sight p {
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 300;
+  font-size: .8em;
 }
 /*# sourceMappingURL=About.css.map */

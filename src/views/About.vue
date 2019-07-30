@@ -9,16 +9,75 @@
     </div>
 
     <div class="cards">
-      <v-flex>
-        <v-card class="mx-auto" :flat="flat" :loading="loading" :outlined="outlined" :elevation="elevation" :raised="raised" :width="width" :height="height">
-          <v-img v-if="media" class="white--text" height="200px" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
-            <v-card-title class="align-end fill-height">I'm a title</v-card-title>
-          </v-img>
-          <v-card-title v-else>I'm a title</v-card-title>
+      <v-container>
+        <v-layout row wrap>
+          <v-flex xs12 sm6 md4 lg3 xl3>
+            <v-card class="pill" raised="true">
+              <v-img class="white--text" height="130px" src="@/assets/bg13.jpg"></v-img>
+              <v-card-title class="card-title">
+                <h3 class="dark--text">97%+</h3>
+                <p class="grey--text">Studen Retention</p>
+              </v-card-title>
+            </v-card>
+          </v-flex>
 
-          <v-card-text>I'm card text</v-card-text>
-        </v-card>
-      </v-flex>
+          <v-flex xs12 sm6 md4 lg3 xl3>
+            <v-card class="pill" raised="true">
+              <v-img class="white--text" height="130px" src="@/assets/bg4.jpg"></v-img>
+              <v-card-title class="card-title">
+                <h3 class="dark--text">2000+</h3>
+                <p class="grey--text">Years Experience</p>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+
+          <v-flex xs12 sm6 md4 lg3 xl3>
+            <v-card class="pill" raised="true">
+              <v-img class="white--text" height="130px" src="@/assets/bg14.jpg"></v-img>
+              <v-card-title class="card-title">
+                <h3 class="dark--text">2500+</h3>
+                <p class="grey--text">Happy Parents</p>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+
+          <v-flex xs12 sm6 md4 lg3 xl3>
+            <v-card class="pill" raised="true">
+              <v-img class="white--text" height="130px" src="@/assets/bg2.jpg"></v-img>
+              <v-card-title class="card-title">
+                <h3 class="dark--text">10+</h3>
+                <p class="grey--text">Years in Business</p>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+        </v-layout>
+
+        <v-layout row wrap justify-space-around class="mission">
+          <v-flex xs12 sm12 md6 lg6 xl6>
+            <v-card raised="true" class="sight">
+              <v-img class="white--text" height="250px" src="@/assets/bg5.jpg"></v-img>
+              <v-card-title>
+                <h1>our mission</h1>
+                <p>
+                  To deliver high-quality academic services with integrity, honesty, and transparency with reasonable margins, while maintaining profitability.
+                </p>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+
+          <v-flex xs12 sm12 md6 lg6 xl6>
+            <v-card raised="true" class="sight">
+              <v-img class="white--text" height="250px" src="@/assets/bg12.jpg"></v-img>
+              <v-card-title>
+                <h1>our vision</h1>
+                <p>
+                  To be the most recognized and trusted academic institute based out of Nigeria.
+                </p>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </div>
   </div>
 </template>
@@ -27,17 +86,6 @@
 import Nav from "@/components/Nav";
 export default {
   name: "About",
-  data: () => ({
-      flat: false,
-      media: true,
-      loading: false,
-      actions: true,
-      outlined: false,
-      elevation: undefined,
-      raised: true,
-      width: 344,
-      height: undefined,
-    }),
   components: {
     Nav
   }
