@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <video autoplay muted loop>
-      <source src="@/assets/vid1.mp4" type="video/mp4">
+      <source src="@/assets/vid2.mp4" type="video/mp4">
     </video>
     <div class="hero">
       <!--drawer goes here-->
       <Nav />
-      <div class="texts">
+      <div class="texts animated bounceInLeft">
         <h1>level up learning</h1>
         <h4>You are not alone</h4>
         <p>Join us today</p>
@@ -40,7 +40,7 @@ import Nav from './Nav'
   height: 100%;
   width: 100%;
   overflow: hidden !important;
-  font-family: 'Raleway', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   video{
     height: 100%;
