@@ -15,7 +15,6 @@
                 <v-btn class="mx-2" fab dark large color="white">
                   <v-icon large color="blue darken-2" v-on="on">mdi-email</v-icon>
                 </v-btn>
-                <!-- <v-btn color="primary" dark v-on="on">Open Dialog</v-btn> -->
               </template>
               <v-card>
                 <v-card-text>
