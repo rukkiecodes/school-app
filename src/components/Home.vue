@@ -4,14 +4,11 @@
       <source src="@/assets/vid2.mp4" type="video/mp4">
     </video>
     <div class="hero">
-      <!--drawer goes here-->
       <Nav />
       <div class="texts animated bounceInLeft">
         <h1>level up learning</h1>
         <h4>You are not alone</h4>
         <p>Join us today</p>
-        
-        <!--form goas here-->
         <Forms />
       </div>
     </div>
