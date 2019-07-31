@@ -8,6 +8,7 @@ import VueParticles from 'vue-particles'
 import VeeValidate from 'vee-validate';
 
 Vue.use(VeeValidate);
+Vue.use(VeeValidate, { inject: false });
 Vue.use(VueParticles);
 Vue.config.productionTip = false;
 

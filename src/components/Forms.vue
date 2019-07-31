@@ -2,7 +2,11 @@
   <div class="forms">
     <div class="login_form">
       <v-layout justify-center>
-        <v-dialog v-model="dialog1" persistent max-width="600px">
+        <v-dialog 
+        v-model="dialog1" 
+        persistent 
+        max-width="600px"
+        >
           <template v-slot:activator="{ on }">
             <v-btn class="reg_btn" v-on="on">Login</v-btn>
           </template>
@@ -14,14 +18,43 @@
               <v-container grid-list-md>
                 <v-layout wrap>
                   <v-flex xs12>
-                    <v-text-field label="Email" required>
-                        <v-icon slot="prepend" color="blue">mdi-email</v-icon>
-                    </v-text-field>
+                    <ValidationProvider 
+                    name="Login email" 
+                    rules="required|email"
+                    >
+                        <v-text-field 
+                        label="Email" 
+                        slot-scope="{ errors, valid }" 
+                        v-model="loginEmail"
+                        :error-messages="errors"
+                        :success="valid"
+                        required
+                        >
+                            <v-icon 
+                            slot="prepend" 
+                            color="blue">
+                            mdi-email
+                            </v-icon>
+                        </v-text-field>
+                    </ValidationProvider>
                   </v-flex>
+                  
                   <v-flex xs12>
-                    <v-text-field label="Password" type="password" required>
-                        <v-icon slot="prepend" color="blue">mdi-lock</v-icon>
-                    </v-text-field>
+                    <ValidationProvider
+                    name="Login password"
+                    rules="required|max:10|min:6"
+                    >
+                        <v-text-field 
+                        slot-scope="{ errors, valid }"
+                        label="Password" 
+                        type="password" 
+                        v-model="loginPassword"
+                        :error-messages="errors"
+                        :success="valid"
+                        >
+                            <v-icon slot="prepend" color="blue">mdi-lock</v-icon>
+                        </v-text-field>
+                    </ValidationProvider>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -97,12 +130,21 @@
 
 
 <script>
+import {
+  ValidationObserver,
+  ValidationProvider,
+  withValidation
+} from "vee-validate";
 export default {
   name: "Forms",
   data: () => ({
     dialog1: false,
     dialog2: false
-  })
+  }),
+  components:{
+        ValidationProvider,
+        ValidationObserver
+  },
 };
 </script>
 
