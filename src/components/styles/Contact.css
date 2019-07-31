@@ -11,6 +11,11 @@
   background-attachment: fixed;
 }
 
+.contact .hero .texts {
+  position: relative;
+  top: 100px;
+}
+
 .contact .hero .texts h1 {
   text-align: center;
   color: #fff;
