@@ -3,9 +3,7 @@
     <v-toolbar dense flat height="100%" class="toolbar">
       <v-app-bar-nav-icon class="grey--text drawer-icon" @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
-        <router-link to="/">
-          <img src="@/assets/logo.png" width="60%" alt />
-        </router-link>
+        <v-img src="@/assets/logo.png" width="60%"></v-img>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>

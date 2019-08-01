@@ -43,6 +43,7 @@
                       </v-text-field>
                     </ValidationProvider>
                   </v-flex>
+                  <span class="red--text" v-model="displayloginerror">{{ displayloginerror }}</span>
                 </v-layout>
               </v-container>
             </v-card-text>
@@ -53,8 +54,8 @@
                   cancle
                   <v-icon dark right>mdi-close</v-icon>
                 </v-btn>
-                <v-btn @click="dialog1" class="ma-2 primary">
-                  Send
+                <v-btn @click="login" class="ma-2 primary">
+                  {{ loginSend }}
                   <v-icon dark right>mdi-send</v-icon>
                 </v-btn>
               </v-card-actions>
@@ -168,7 +169,9 @@ export default {
     signupEmail: null,
     signupPassword: null,
     signupSend: "Sign Up",
-    displaysignuperror: null
+    loginSend: "Login",
+    displaysignuperror: null,
+    displayloginerror: null
   }),
   components: {
     ValidationProvider,
@@ -192,8 +195,8 @@ export default {
         })
         .catch(error => {
           // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
+          let errorCode = error.code;
+          let errorMessage = error.message;
           if (errorCode == "auth/weak-password") {
             alert("The password is too weak.");
           } else {
@@ -201,6 +204,28 @@ export default {
             this.signupSend = "Error !!";
             // alert(errorMessage);
             this.displaysignuperror = errorMessage;
+          }
+          console.log(error);
+        });
+    },
+    login() {
+      fb.auth()
+        .signInWithEmailAndPassword(this.loginEmail, this.loginPassword)
+        .then(() => {
+          this.$router.replace("admin/overview");
+        })
+        .catch(error => {
+          let errorCode = error.code;
+          let errorMessage = error.message;
+          if (errorCode === "auth/wrong-password") {
+            // alert("Wrong password");
+            this.displayloginerror = "Wrong password";
+          } else {
+            // alert(errorMessage);
+            this.loginSend = "";
+            this.loginSend = "Error !!";
+            // alert(errorMessage);
+            this.displayloginerror = errorMessage;
           }
           console.log(error);
         });
