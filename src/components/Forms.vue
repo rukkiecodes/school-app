@@ -188,7 +188,7 @@ export default {
       fb.auth()
         .createUserWithEmailAndPassword(this.signupEmail, this.signupPassword)
         .then(() => {
-          this.$router.replace("admin");
+          this.$router.replace("admin/overview");
         })
         .catch(error => {
           // Handle Errors here.
