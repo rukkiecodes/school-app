@@ -123,6 +123,9 @@
                       </v-text-field>
                     </ValidationProvider>
                   </v-flex>
+                  <v-flex xs12>
+                    <span class="red--text" v-model="displaysignuperror">{{ displaysignuperror }}</span>
+                  </v-flex>
                 </v-layout>
               </v-container>
             </v-card-text>
@@ -134,7 +137,7 @@
                   <v-icon dark right>mdi-close</v-icon>
                 </v-btn>
                 <v-btn @click="register" class="ma-2 primary">
-                  Send
+                  {{ signupSend }}
                   <v-icon dark right>mdi-send</v-icon>
                 </v-btn>
               </v-card-actions>
@@ -163,7 +166,9 @@ export default {
     loginPassword: null,
     fullName: null,
     signupEmail: null,
-    signupPassword: null
+    signupPassword: null,
+    signupSend: "Sign Up",
+    displaysignuperror: null
   }),
   components: {
     ValidationProvider,
@@ -179,19 +184,23 @@ export default {
       this.dialog2 = false;
     },
     register() {
+      this.signupSend = "Signing Up...";
       fb.auth()
         .createUserWithEmailAndPassword(this.signupEmail, this.signupPassword)
-        .then(()=>{
-          this.$router.replace('admin');
+        .then(() => {
+          this.$router.replace("admin");
         })
-        .catch(function(error) {
+        .catch(error => {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
           if (errorCode == "auth/weak-password") {
             alert("The password is too weak.");
           } else {
-            alert(errorMessage);
+            this.signupSend = "";
+            this.signupSend = "Error !!";
+            // alert(errorMessage);
+            this.displaysignuperror = errorMessage;
           }
           console.log(error);
         });

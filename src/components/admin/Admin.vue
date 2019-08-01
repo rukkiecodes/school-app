@@ -1,6 +1,7 @@
 <template>
     <div class="admin">
         <Nav/>
+        <router-view/>
     </div>
 </template>
 

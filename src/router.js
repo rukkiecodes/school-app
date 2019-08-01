@@ -1,14 +1,17 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Admin from "./views/Admin.vue";
+import Overview from "./views/Overview.vue";
+import Profile from "./views/Profile.vue";
+import Logout from "./views/Logout.vue";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: "/",
       name: "home",
       component: Home
@@ -28,8 +31,23 @@ export default new Router({
     {
       path: "/admin",
       name: "admin",
-      component: () =>
-        import("./views/Admin.vue")
+      component: Admin,
+      children: [{
+          path: "overview",
+          name: "overview",
+          component: Overview
+        },
+        {
+          path: "profile",
+          name: "profile",
+          component: Profile
+        },
+        {
+          path: "logout",
+          name: "logout",
+          component: Logout
+        }
+      ]
     }
   ]
 });

@@ -47,9 +47,9 @@ export default {
   data: () => ({
     drawer: true,
     items: [
-      { title: "Overview", icon: "mdi-view-dashboard", route:"/overvier"},
-      { title: "Profile", icon: "mdi-account", route:"/profile"},
-      { title: "Logout", icon: "mdi-logout", route:"/logout"}
+      { title: "Overview", icon: "mdi-view-dashboard", route:"/admin/overview"},
+      { title: "Profile", icon: "mdi-account", route:"/admin/profile"},
+      { title: "Logout", icon: "mdi-logout", route:"/admin/logout"}
     ]
   })
 };
