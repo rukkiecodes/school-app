@@ -44,7 +44,7 @@ import {fb} from '../../firebase'
 export default {
   email: "Nav",
   data: () => ({
-    drawer: true,
+    drawer: false,
     name: null,
     email: null,
     items: [
