@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <v-toolbar dense flat height="100%" class="toolbar">
-      <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="grey--text drawer-icon" @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
         <router-link to="/">
           <img src="@/assets/logo.png" width="60%" alt />
@@ -27,7 +27,7 @@
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item v-for="item in items" :key="item.title" link router :to="item.route">
           <v-list-item-icon>
             <v-icon class="white--text">{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -47,9 +47,9 @@ export default {
   data: () => ({
     drawer: true,
     items: [
-      { title: "Overview", icon: "mdi-view-dashboard" },
-      { title: "Profile", icon: "mdi-account" },
-      { title: "Logout", icon: "mdi-logout" }
+      { title: "Overview", icon: "mdi-view-dashboard", route:"/overvier"},
+      { title: "Profile", icon: "mdi-account", route:"/profile"},
+      { title: "Logout", icon: "mdi-logout", route:"/logout"}
     ]
   })
 };
@@ -63,8 +63,13 @@ export default {
   .toolbar {
     background: transparent;
 
+    .drawer-icon{
+        animation-name: icon;
+        animation-duration: 1s;
+    }
+
     .link {
-      color: #fff;
+    //   color: #fff;
       text-decoration: none;
       margin-left: 4%;
     }

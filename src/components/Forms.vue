@@ -1,12 +1,9 @@
 <template>
   <div class="forms">
+    <!--Login form-->
     <div class="login_form">
       <v-layout justify-center>
-        <v-dialog 
-        v-model="dialog1" 
-        persistent 
-        max-width="600px"
-        >
+        <v-dialog v-model="dialog1" persistent max-width="600px">
           <template v-slot:activator="{ on }">
             <v-btn class="reg_btn" v-on="on">Login</v-btn>
           </template>
@@ -18,47 +15,32 @@
               <v-container grid-list-md>
                 <v-layout wrap>
                   <v-flex xs12>
-                    <ValidationProvider 
-                    name="Login email" 
-                    rules="required|email"
-                    >
-                        <v-text-field 
-                        label="Email" 
-                        slot-scope="{ errors, valid }" 
+                    <ValidationProvider name="Login email" rules="required|email">
+                      <v-text-field
+                        label="Email"
+                        slot-scope="{ errors, valid }"
                         v-model="loginEmail"
                         :error-messages="errors"
                         :success="valid"
                         required
-                        >
-                            <v-icon 
-                            slot="prepend" 
-                            color="blue">
-                            mdi-email
-                            </v-icon>
-                        </v-text-field>
+                      >
+                        <v-icon slot="prepend" color="blue">mdi-email</v-icon>
+                      </v-text-field>
                     </ValidationProvider>
                   </v-flex>
-                  
+
                   <v-flex xs12>
-                    <ValidationProvider
-                    name="Login password"
-                    rules="required|max:10|min:6"
-                    >
-                        <v-text-field 
+                    <ValidationProvider name="Login password" rules="required|max:10|min:6">
+                      <v-text-field
                         slot-scope="{ errors, valid }"
-                        label="Password" 
-                        type="password" 
+                        label="Password"
+                        type="password"
                         v-model="loginPassword"
                         :error-messages="errors"
                         :success="valid"
-                        >
-                            <v-icon 
-                            slot="prepend" 
-                            color="blue"
-                            >
-                            mdi-lock
-                            </v-icon>
-                        </v-text-field>
+                      >
+                        <v-icon slot="prepend" color="blue">mdi-lock</v-icon>
+                      </v-text-field>
                     </ValidationProvider>
                   </v-flex>
                 </v-layout>
@@ -67,15 +49,9 @@
             <v-layout justify-center>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn 
-                @click="loginClear" 
-                class="ma-2 red white--text"
-                >
+                <v-btn @click="loginClear" class="ma-2 red white--text">
                   cancle
-                  <v-icon 
-                  dark right
-                  >
-                  mdi-close</v-icon>
+                  <v-icon dark right>mdi-close</v-icon>
                 </v-btn>
                 <v-btn @click="dialog1" class="ma-2 primary">
                   Send
@@ -88,13 +64,10 @@
       </v-layout>
     </div>
 
+    <!--signup form-->
     <div class="signup_form">
       <v-layout justify-center>
-        <v-dialog 
-        v-model="dialog2" 
-        persistent 
-        max-width="600px"
-        >
+        <v-dialog v-model="dialog2" persistent max-width="600px">
           <template v-slot:activator="{ on }">
             <v-btn class="reg_btn" v-on="on">Sign Up</v-btn>
           </template>
@@ -106,68 +79,48 @@
               <v-container grid-list-md>
                 <v-layout wrap>
                   <v-flex xs12>
-                    <ValidationProvider
-                    name="name"
-                    rules="required"
-                    >
-                        <v-text-field 
+                    <ValidationProvider name="name" rules="required">
+                      <v-text-field
                         slot-scope="{ errors, valid }"
                         label="Full Name"
                         v-model="fullName"
                         :error-messages="errors"
                         :success="valid"
-                        required>
-                            <v-icon 
-                            slot="prepend" 
-                            color="blue"
-                            >
-                            mdi-account
-                            </v-icon>
-                        </v-text-field>
+                        required
+                      >
+                        <v-icon slot="prepend" color="blue">mdi-account</v-icon>
+                      </v-text-field>
                     </ValidationProvider>
                   </v-flex>
 
                   <v-flex xs12>
-                    <ValidationProvider
-                    name="Sign UP Email"
-                    rules="required|email"
-                    >
-                        <v-text-field 
+                    <ValidationProvider name="Sign UP Email" rules="required|email">
+                      <v-text-field
                         slot-scope="{ errors, valid }"
                         v-model="signupEmail"
                         :error-messages="errors"
                         :success="valid"
-                        label="Email" 
-                        type="email" 
-                        required>
-                            <v-icon 
-                            slot="prepend" 
-                            color="blue"
-                            >
-                            mdi-email
-                            </v-icon>
-                        </v-text-field>
+                        label="Email"
+                        type="email"
+                        required
+                      >
+                        <v-icon slot="prepend" color="blue">mdi-email</v-icon>
+                      </v-text-field>
                     </ValidationProvider>
                   </v-flex>
                   <v-flex xs12>
-                    <ValidationProvider
-                    name="SignUp Password"
-                    rules="required|max:10|min:6">
-                        <v-text-field 
+                    <ValidationProvider name="SignUp Password" rules="required|max:10|min:6">
+                      <v-text-field
                         slot-scope="{ errors, valid }"
                         v-model="signupPassword"
                         :error-messages="errors"
                         :success="valid"
-                        label="Password" 
-                        type="password" 
-                        required>
-                            <v-icon 
-                            slot="prepend" 
-                            color="blue"
-                            >
-                            mdi-lock
-                            </v-icon>
-                        </v-text-field>
+                        label="Password"
+                        type="password"
+                        required
+                      >
+                        <v-icon slot="prepend" color="blue">mdi-lock</v-icon>
+                      </v-text-field>
                     </ValidationProvider>
                   </v-flex>
                 </v-layout>
@@ -176,17 +129,11 @@
             <v-layout justify-center>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn 
-                @click="signupClear" 
-                class="ma-2 red white--text"
-                >
+                <v-btn @click="signupClear" class="ma-2 red white--text">
                   cancle
                   <v-icon dark right>mdi-close</v-icon>
                 </v-btn>
-                <v-btn 
-                @click="dialog2 = false" 
-                class="ma-2 primary"
-                >
+                <v-btn @click="register" class="ma-2 primary">
                   Send
                   <v-icon dark right>mdi-send</v-icon>
                 </v-btn>
@@ -206,30 +153,49 @@ import {
   ValidationProvider,
   withValidation
 } from "vee-validate";
+import { fb } from "../firebase";
 export default {
   name: "Forms",
   data: () => ({
     dialog1: false,
     dialog2: false,
-    loginEmail: '',
-    loginPassword: '',
-    fullName: '',
-    signupEmail: '',
-    signupPassword: ''
+    loginEmail: null,
+    loginPassword: null,
+    fullName: null,
+    signupEmail: null,
+    signupPassword: null
   }),
-  components:{
-        ValidationProvider,
-        ValidationObserver
+  components: {
+    ValidationProvider,
+    ValidationObserver
   },
-  methods:{
-      loginClear(){
-          this.loginEmail = this.loginPassword = '';
-          this.dialog1 = false;
-      },
-      signupClear(){
-          this.fullName = this.signupEmail = this.signupPassword = '';
-          this.dialog2 = false;
-      }
+  methods: {
+    loginClear() {
+      this.loginEmail = this.loginPassword = null;
+      this.dialog1 = false;
+    },
+    signupClear() {
+      this.fullName = this.signupEmail = this.signupPassword = null;
+      this.dialog2 = false;
+    },
+    register() {
+      fb.auth()
+        .createUserWithEmailAndPassword(this.signupEmail, this.signupPassword)
+        .then(()=>{
+          this.$router.replace('admin');
+        })
+        .catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          if (errorCode == "auth/weak-password") {
+            alert("The password is too weak.");
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+        });
+    }
   }
 };
 </script>
