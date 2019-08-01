@@ -24,6 +24,12 @@ export default new Router({
       name: "contact",
       component: () =>
         import("./views/Contact.vue")
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: () =>
+        import("./views/Admin.vue")
     }
   ]
 });
