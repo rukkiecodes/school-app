@@ -18,7 +18,7 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title class="white--text my-6">John Leider</v-list-item-title>
+          <v-list-item-title class="white--text my-6">{{ email }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -40,16 +40,23 @@
 </template>
 
 <script>
+import {fb} from '../../firebase'
 export default {
-  name: "Nav",
+  email: "Nav",
   data: () => ({
     drawer: true,
+    name: null,
+    email: null,
     items: [
       { title: "Overview", icon: "mdi-view-dashboard", route:"/admin/overview"},
       { title: "Profile", icon: "mdi-account", route:"/admin/profile"},
       { title: "Logout", icon: "mdi-logout", route:"/admin/logout"}
     ]
-  })
+  }),
+  created(){
+    let user = fb.auth().currentUser;
+    this.email = user.email;
+  }
 };
 </script>
 
